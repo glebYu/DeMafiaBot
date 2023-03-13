@@ -1,4 +1,5 @@
-const { REST, Routes } = require('discord.js');
+const { REST } = require('discord.js');
+const { Routes } = require ("discord-api-types/v10");
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
 
@@ -11,7 +12,7 @@ for (const file of commandFiles) {
 	commands.push(command.data.toJSON());
 }
 
-const rest = new REST({ version: '10' }).setToken(token);
+const rest = new REST({version: "10"}).setToken(token);
 
 (async () => {
 	try {
